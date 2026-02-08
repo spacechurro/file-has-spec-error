@@ -1,0 +1,16 @@
+$ bundle exec rubocop app/
+Inspecting 3 files
+...
+
+3 files inspected, no offenses detected
+
+# BUG: FileHasSpec cop is enabled in .rubocop.yml but does not flag any offenses.
+#
+# Expected behavior:
+#   - app/controllers/users_controller.rb should be flagged (no spec/controllers/users_controller_spec.rb)
+#   - app/services/user_service.rb should be flagged (no spec/services/user_service_spec.rb)
+#   - app/models/user.rb should NOT be flagged (spec/models/user_spec.rb exists)
+#
+# Root cause: The rubocop-rspec_parity gem (v1.1.0) declares the FileHasSpec cop
+# in config/default.yml but the implementation file was never created.
+# The cop class does not exist, so RuboCop silently skips it.

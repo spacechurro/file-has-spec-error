@@ -1,0 +1,36 @@
+plugins:
+  - rubocop-rspec_parity
+
+AllCops:
+  TargetRubyVersion: 3.2
+  NewCops: enable
+
+# Disable all standard cops so we can focus on RSpecParity
+Style:
+  Enabled: false
+Layout:
+  Enabled: false
+Lint:
+  Enabled: false
+Metrics:
+  Enabled: false
+Naming:
+  Enabled: false
+Security:
+  Enabled: false
+Bundler:
+  Enabled: false
+Gemspec:
+  Enabled: false
+
+# Enable only FileHasSpec for this demo
+RSpecParity/FileHasSpec:
+  Enabled: true
+  Include:
+    - 'app/**/*.rb'
+
+RSpecParity/PublicMethodHasSpec:
+  Enabled: false
+
+RSpecParity/SufficientContexts:
+  Enabled: false

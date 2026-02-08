@@ -1,0 +1,23 @@
+$ bundle exec rubocop app/
+Inspecting 3 files
+C.C
+
+Offenses:
+
+app/controllers/users_controller.rb:3:1: C: RSpecParity/FileHasSpec: Missing spec file. Expected spec/controllers/users_controller_spec.rb
+class UsersController ...
+^^^^^^^^^^^^^^^^^^^^^
+app/services/user_service.rb:3:1: C: RSpecParity/FileHasSpec: Missing spec file. Expected spec/services/user_service_spec.rb
+class UserService ...
+^^^^^^^^^^^^^^^^^
+
+3 files inspected, 2 offenses detected
+
+# FIXED: FileHasSpec cop now correctly detects missing spec files.
+#
+# - app/controllers/users_controller.rb is flagged (no spec/controllers/users_controller_spec.rb)
+# - app/services/user_service.rb is flagged (no spec/services/user_service_spec.rb)
+# - app/models/user.rb is NOT flagged (spec/models/user_spec.rb exists) ✓
+#
+# Fix: Using spacechurro/rubocop-rspec_parity branch "implement-file-has-spec"
+# which adds the missing cop implementation.
