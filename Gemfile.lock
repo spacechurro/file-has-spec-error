@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/spacechurro/rubocop-rspec_parity.git
-  revision: 5bb03ca8226fa81e727de6c06d7f35869824d004
+  revision: 4506ca6a3cff7244388d070353abf5f8555d2a1e
   branch: implement-file-has-spec
   specs:
     rubocop-rspec_parity (1.1.0)
@@ -89,4 +89,4 @@ CHECKSUMS
   unicode-emoji (4.2.0) sha256=519e69150f75652e40bf736106cfbc8f0f73aa3fb6a65afe62fefa7f80b0f80f
 
 BUNDLED WITH
-  4.0.6
+  4.0.2
